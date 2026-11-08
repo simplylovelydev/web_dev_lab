@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox and Grid Together</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+      min-height: 100vh;
+    }
+
+    .header {
+      grid-area: header;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1f2937;
+      color: white;
+      padding: 1rem 2rem;
+    }
+
+    .header nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .header a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background: #f3f4f6;
+      padding: 1.5rem;
+    }
+
+    .content {
+      grid-area: content;
+      padding: 1.5rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #e5e7eb;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .card button {
+      align-self: flex-start;
+      margin-top: 1rem;
+    }
+
+    .footer {
+      grid-area: footer;
+      display: flex;
+      justify-content: center;
+      background: #1f2937;
+      color: white;
+      padding: 1rem;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "content"
+          "footer";
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h2>My Portfolio</h2>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <aside class="sidebar">
+    <h3>Skills</h3>
+    <p>HTML, CSS, Git</p>
+  </aside>
+
+  <main class="content">
+    <h1>Projects</h1>
+    <div class="cards">
+      <div class="card">
+        <div>
+          <h3>Project One</h3>
+          <p>A short description</p>
+        </div>
+        <button>View</button>
+      </div>
+      <div class="card">
+        <div>
+          <h3>Project Two</h3>
+          <p>A longer description that takes more space than the others.</p>
+        </div>
+        <button>View</button>
+      </div>
+      <div class="card">
+        <div>
+          <h3>Project Three</h3>
+          <p>A short description</p>
+        </div>
+        <button>View</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 My Portfolio</p>
+  </footer>
+</body>
+</html>
