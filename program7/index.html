@@ -3,82 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Newspaper Layout</title>
+  <title>Design Tokens</title>
   <style>
+    :root {
+      --color-primary: #2563eb;
+      --color-text: #1f2937;
+      --color-bg: #ffffff;
+
+      --font-main: "Segoe UI", Arial, sans-serif;
+
+      --text-base: 1rem;
+      --text-lg: 1.5rem;
+      --text-xl: 2.5rem;
+
+      --space: 1rem;
+    }
+
     body {
-      font-family: Georgia, serif;
-      margin: 0;
+      font-family: var(--font-main);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      background: var(--color-bg);
       padding: 2rem;
     }
 
     h1 {
-      text-align: center;
-      border-bottom: 3px double #1f2937;
-      padding-bottom: 1rem;
+      font-size: var(--text-xl);
+      margin-bottom: var(--space);
     }
 
-    .newspaper {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+    h2 {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space);
     }
 
-    .article {
-      border-right: 1px solid #ccc;
-      padding-right: 1rem;
+    p {
+      margin-bottom: var(--space);
     }
 
-    .article:last-child {
-      border-right: none;
-    }
-
-    .featured {
-      grid-column: span 2;
-    }
-
-    @media (max-width: 800px) {
-      .newspaper {
-        grid-template-columns: 1fr;
-      }
-
-      .featured {
-        grid-column: span 1;
-      }
-
-      .article {
-        border-right: none;
-      }
+    a {
+      color: var(--color-primary);
     }
   </style>
 </head>
 <body>
-  <h1>The Daily Times</h1>
-
-  <div class="newspaper">
-    <article class="article featured">
-      <h2>Main Story</h2>
-      <p>This is the biggest story of the day. It takes up two columns.</p>
-    </article>
-
-    <article class="article">
-      <h2>Weather</h2>
-      <p>Sunny with light winds all day.</p>
-    </article>
-
-    <article class="article">
-      <h2>Sports</h2>
-      <p>The local team won last night's match.</p>
-    </article>
-
-    <article class="article">
-      <h2>Business</h2>
-      <p>Markets closed higher this week.</p>
-    </article>
-
-    <article class="article">
-      <h2>Culture</h2>
-      <p>A new art exhibition opens downtown.</p>
-    </article>
-  </div>
+  <h1>My Portfolio</h1>
+  <h2>About Me</h2>
+  <p>I am a web developer learning HTML and CSS.</p>
+  <a href="#">View my work</a>
 </body>
 </html>

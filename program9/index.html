@@ -1,123 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>College Dashboard</title>
-<style>
-  * {
-    box-sizing: border-box;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Flexbox</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
 
-  body {
-    margin: 0;
-    padding: 20px;
-    font-family: sans-serif;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    gap: 16px;
-  }
-  header {
-    display: grid;
-    justify-items: center;
-    align-content: center;
-    gap: 16px;
-    margin: 0;
-    padding: 20px;
-    border: 2px solid #000;
-    text-align: center;
-  }
-  header h1 {
-    margin: 0;
-    text-decoration: underline;
-  }
-  header p {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    text-decoration: underline;
-  }
-  #grid-box {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 16px;
-    align-items: stretch;
-  }
-  #grid-box div {
-    display: grid;
-    align-content: start;
-    gap: 16px;
-    padding: 20px;
-    border: 2px solid black;
-  }
-  #grid-box h2 {
-    text-decoration: underline;
-  }
-  #grid-box p {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 16px;
-    margin: 0;
-    border-bottom: 1px solid black;
-    overflow-wrap: anywhere;
-  }
-  footer {
-    display: grid;
-    place-items: center;
-    padding: 20px;
-  }
-  footer p {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-  }
-</style>
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: #1f2937;
+      padding: 1rem 2rem;
+    }
+
+    .navbar h2 {
+      color: white;
+      margin: 0;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0.25rem 0.75rem;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .card {
+      flex: 1 1 250px;
+      background: #f3f4f6;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>College Dashboard</h1>
-        <p>Welcome to the College Dashboard!</p>
-    </header>
-    <main>
-        <section id="grid-box">
-            <div>
-                <h2>Student Information</h2>
-                <p><strong>Student ID:</strong> 2392608000</p>
-                <p><strong>Name:</strong> Student 1</p>
-                <p><strong>Course:</strong> CSE AI&ML</p>
-                <p><strong>Semester:</strong> 1st semester</p>
-                <p><strong>Section:</strong> A</p>
-                <p><strong>Email:</strong> 2392608000@svyasa-sas.edu.in</p>
-            </div>
-            <div>
-                <h2>Course Management</h2>
-                <p><strong>Course:</strong> CSE AI&ML</p>
-                <p><strong>Subjects:</strong> 7 subjects</p>
-                <p><strong>Lab:</strong> web dev, java.</p>
-                <p><strong>Attendance:</strong> min 75%</p>
-                <p><strong>Exams:</strong> IA-2,End sem.</p>
-            </div>
-            <div>
-                <h2>Faculty Directory</h2>
-                <p><strong>Web Dev:</strong> Mr. Web Dev prof</p>
-                <p><strong>Java:</strong> Mr. Java prof</p>
-                <p><strong>Agentic AI:</strong> Mr. Agentic AI prof</p>
-                <p><strong>Micro Mba:</strong> Mr. Micro Mba prof</p>
-                <p><strong>Maths:</strong> Mr. Maths prof</p>
-            </div>
-            <div>
-                <h2>Reports</h2>
-                <p><strong>Current CGPA:</strong> 0.00</p>
-                <p><strong>Overall Attendance:</strong> 92%</p>
-                <p><strong>Assignment Status:</strong> Done</p>
-                <p><strong>Disciplinary Record:</strong> Good</p>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 College Dashboard 2026</p>
-    </footer>
+  <nav class="navbar">
+    <h2>My Portfolio</h2>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="card-grid">
+    <div class="card">
+      <h3>Project One</h3>
+      <p>A short description</p>
+    </div>
+    <div class="card">
+      <h3>Project Two</h3>
+      <p>A short description</p>
+    </div>
+    <div class="card">
+      <h3>Project Three</h3>
+      <p>A short description</p>
+    </div>
+  </section>
 </body>
 </html>
